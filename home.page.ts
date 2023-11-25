@@ -14,7 +14,7 @@ export class HomePage {
   operando: string = "";
   porcentagem: string = "100";
   fracao_num: string ="1";
-
+ 
 
   constructor() {}
 
@@ -61,6 +61,35 @@ export class HomePage {
     }
   }
 
+  raiz(){
+    if (this.operador_selecionado == false) {
+      this.primeiro_elemento = this.resultado;
+      const numero = parseFloat(this.primeiro_elemento); // "25" > 25
+  
+      if (numero >= 0) {
+        this.resultado = Math.sqrt(numero).toString();
+      } else {
+        this.resultado = "0";
+      }
+    } else {
+      console.log("Um operador já foi selecionado");
+    }
+  }
+
+  potencia(){
+    if (this.operador_selecionado == false) {
+      this.primeiro_elemento = this.resultado;
+     if (parseInt(this.primeiro_elemento) !== 0) {
+        this.operador_selecionado = true;
+        this.operando = "X²";
+        this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.primeiro_elemento)).toString();
+      } else {
+        this.resultado = "1"; }  
+  } else {
+    console.log("Um operador já foi selecionado");
+  }
+}
+
   
 
   calcular() {
@@ -72,12 +101,8 @@ export class HomePage {
       this.resultado = (parseInt(this.primeiro_elemento) / parseInt(this.segundo_elemento)).toString();
     } else if (this.operando == "*"){
       this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento)).toString();
-    } else if (this.operando == "x²"){
-      this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.primeiro_elemento)).toString();
     } else if (this.operando == "%"){
       this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento) / parseInt(this.porcentagem)).toString();
-    } else if (this.operando == "1/x"){
-      this.resultado = (parseInt(this.fracao_num) / parseInt(this.primeiro_elemento)).toString();
     }
   }
 
