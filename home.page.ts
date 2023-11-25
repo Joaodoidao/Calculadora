@@ -50,12 +50,15 @@ export class HomePage {
   fracao() {
     if (this.operador_selecionado == false) {
       this.primeiro_elemento = this.resultado;
-      this.operador_selecionado = true;
-      this.operando = "1/x";
-      this.resultado = (1 / parseInt(this.primeiro_elemento)).toString();
-    } else 
-      (console.log("Um operador já foi selecionado")); 
-  
+      if (parseInt(this.primeiro_elemento) !== 0) {
+        this.operador_selecionado = true;
+        this.operando = "1/x";
+        this.resultado = (1 / parseInt(this.primeiro_elemento)).toString();
+      } else {
+        this.resultado = "0"; }
+    } else {
+      console.log("Um operador já foi selecionado");
+    }
   }
 
   
