@@ -13,7 +13,7 @@ export class HomePage {
   operador_selecionado: boolean = false;
   operando: string = "";
   porcentagem: string = "100";
-  fracao_num: string ="1";
+  
  
 
   constructor() {}
@@ -113,8 +113,8 @@ export class HomePage {
     this.segundo_elemento = "";
     this.operando = "";
     this.operador_selecionado = false;
-    this.porcentagem = "100";
-    this.fracao_num = "1";
+    
+   
   
   }
 }
